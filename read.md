@@ -4,7 +4,12 @@ This project implements a Model Predictive Controller in the given simulator.
 
 Kinematic bicycle model is being used for this. The state includes position x and y, orientation, velocity, cross-track error and orientation error. State values are calculated using the respective equations for each. 
 
-
+      // x_[t+1] = x[t] + v[t] * cos(psi[t]) * dt
+      // y_[t+1] = y[t] + v[t] * sin(psi[t]) * dt
+      // psi_[t+1] = psi[t] + v[t] / Lf * delta[t] * dt
+      // v_[t+1] = v[t] + a[t] * dt
+      // cte[t+1] = f(x[t]) - y[t] + v[t] * sin(epsi[t]) * dt
+      // epsi[t+1] = psi[t] - psides[t] + v[t] * delta[t] / Lf * dt
 
 ### Timestep Length and Elapsed Duration (N & dt)
 
