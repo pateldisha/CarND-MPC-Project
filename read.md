@@ -1,4 +1,7 @@
 
+### CarND-Controls-MPC
+--- Self-Driving Car Engineer Nanodegree Program
+
 ### The Model
 This project implements a Model Predictive Controller in the given simulator. 
 
