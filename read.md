@@ -13,12 +13,12 @@ Kinematic bicycle model is being used for this. The state includes position x an
 
 ### Timestep Length and Elapsed Duration (N & dt)
 
-The horizon T is the one which is predicted and it is calculated as N * dt. N is the timestep length i.e the number of the timesteps and dt is the elapsed duration which indicates the time passes between every actuation. 
+The horizon T is the one which is predicted and it is calculated as N * dt. N is the number of the timesteps and dt is the elapsed duration which indicates the time passes between every actuation. 
 
-The values I chose for N and dt are N = and dt = .
+The values I chose for N and dt are N = 10 and dt = 0.1 i.e. 100 ms.
 
-I started with using values... and tried few more values so that the vehicle does not osciallte more and completes the track correctly. 
-It will oscillate more at high value of N and vice versa. 
+I started with using values N = 25 and dt = 0.05 and tried few more values so that the vehicle does not osciallte more and completes the track correctly. 
+What we can notice here is, it will oscillate more at high value of N and vice versa. 
 
 ### Polynomial Fitting and MPC Preprocessing
 
@@ -30,3 +30,4 @@ Then will use polyfit function for points to be fitted to a 3rd order polynomial
 
 
 Here we take care of delay of 100ms, because of which the model will not oscillate near the reference trajectory. So, introducing this delay will make sure about the future position of the vehicle.
+For example, the time elapsed between when we command a steering angle to when that angle is being achieved. So, we introduce latency to take care of this situation.
